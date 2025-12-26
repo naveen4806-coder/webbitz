@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>📞 Contact Page</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #1b2735, #090a0f);
+    color: #fff;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    color: #f5c16c;
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: #ccc;
+    font-size: 16px;
+}
+
+.email-box {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.email-box a {
+    color: #f5c16c;
+    text-decoration: none;
+}
+
+/* Team Layout */
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+/* Team Card */
+.team-card {
+    position: relative;
+    width: 280px;
+    padding: 25px 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 25px 40px rgba(0,0,0,0.5);
+    text-align: center;
+    transition: 0.4s;
+    z-index: 1;
+}
+
+/* Gradient Border (SAFE METHOD) */
+.team-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;                 /* border thickness */
+    border-radius: 22px;
+    background: linear-gradient(135deg, #f5c16c, #042653);
+    z-index: -1;
+}
+
+/* Hover Effect */
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(1, 28, 82, 0.35);
+}
+
+/* Image */
+.team-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Name */
+.team-card h3 {
+    color: #f5c16c;
+    margin: 10px 0 5px;
+}
+
+/* Role */
+.role {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    background: rgba(255,255,255,0.15);
+}
+
+/* Contact */
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 420px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: #f5c16c;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #f5c16c, #ffdd99);
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Contact Our Team</h1>
+    <p>Premium support with a luxury experience</p>
+    <div class="email-box">
+        📧 <a href="mailto:webbitzwebmaker@gmail.com">webbitzwebmaker@gmail.com</a>
+    </div>
+</header>
+
+<div class="team-container">
+
+    <div class="team-card">
+        <h3>Naveen</h3>
+        <span class="role">Team Lead & Developer</span>
+        <div class="contact-info">
+            📞 <a href="tel:8124707090">8124707090</a>
+        </div>
+    </div>
+
+    <div class="team-card">
+        <h3>Harish</h3>
+        <span class="role">Designer</span>
+        <div class="contact-info">
+            📞 <a href="tel:8825637565">8825637565</a>
+        </div>
+    </div>
+
+    <div class="team-card">
+        <h3>Poovarasan</h3>
+        <span class="role">Developer</span>
+        <div class="contact-info">
+            📞 <a href="tel:8778931271">8778931271</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
