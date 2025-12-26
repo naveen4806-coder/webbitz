@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: #464444;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h2 {
+            margin-top: 0;
+            color: #ffffff;
+        }
+
+        .service-card p {
+            font-size: 18px;
+            color: #ffffff;
+            margin: 10px 0 20px 0;
+        }
+
+        .service-card .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+    </style>
+</head>
+<body>
+
+   <a href="intexnew.html"><button style="margin-left: 0px; position: fixed;">🔙</button></a> <h1 style="text-align:center; margin-top:30px; color:#333;">Payment Info</h1>
+
+    <div class="container">
+        <!-- Website Service -->
+        <div class="service-card">
+           <u> <h2>Website</h2></u>
+            <p>Starting Amount: <span class="price">₹2000</span></p>
+            <p>Final amount varies as per your requirement</p>
+        </div> 
+        <!-- Poster Service -->
+        <div class="service-card">
+            <u><h2>Poster</h2></u>
+            <p>Starting Amount: <span class="price">₹200</span></p>
+            <p>Final amount varies as per your requirement</p>
+        </div>
+         <div class="service-card">
+            <u><h2>Logo</h2></u>
+            <p>Starting Amount: <span class="price">₹200</span></p>
+            <p>Final amount varies as per your requirement</p>
+        </div>
+    </div>
+</body>
+</html>

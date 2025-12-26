@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Example</title>
+    <!-- REQUIRED FOR RESPONSIVE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+        /* ---------- MAIN CONTAINER ---------- */
+        .container1 {
+            background-color: rgb(40, 41, 42);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+        /* ---------- TITLE BOX ---------- */
+        .project-title {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+            width: fit-content;
+        }
+        /* ---------- VIDEO ---------- */
+        video {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 10px;
+        }
+        /* ---------- MOBILE TEXT FIX ---------- */
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<a href="example.html"><button style="margin-left: 0px; position: fixed;">🔙</button></a><h1><u>Our Projects</u></h1>
+<div class="container1">
+       <h2 class="project-title">1. LearnGainClarify.com</h2>
+    <video controls>
+        <source src="LearnGainClarify.mp4" type="video/mp4">
+    </video>
+</div>
+</body>
+</html>

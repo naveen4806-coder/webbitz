@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tell Your Requirements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            font-size: 25px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* MAIN LAYOUT */
+        .wrapper {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        /*FORM BOX */
+        .info {
+            background-color: rgb(200, 197, 197);
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgb(0, 0, 0);
+        }
+
+        .info h3 {
+            margin-bottom: 5px;
+        }
+
+        .info input {
+            width: 80%;
+            padding: 2px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: none;
+        }
+        /* BUTTON */
+        .butto1 {
+            background-color: rgb(255, 8, 8);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 15px;
+            box-shadow: 2px 2px 10px black;
+            cursor: pointer;
+            border: none;
+            width: 50%;
+            margin-left: 80px;
+        }
+
+        /*VIDEO BOX */
+        .vid {
+            background-color: black;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 520px;
+            width: 100%;
+        }
+
+        .vid h3 {
+            text-align: center;
+            background-color: rgb(2, 126, 160);
+            color: white;
+            padding: 10px;
+            margin-top: 0;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* MOBILE FIX */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<a href="intexnew.html"><button style="margin-left: 0px; position: fixed;">🔙</button></a><h1>
+    Hey Man 🙎‍♂️ Come <br>
+    Lets Start Creating Your Website 👨‍💻
+</h1>
+<div class="wrapper">
+    <div class="info">
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdwiIvohbFmkEMQcBJl720sThPMCHiEtNlGwobSMo8Um0AvaQ/formResponse" 
+      method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+    <h3>Business Name:</h3>
+    <input type="text" name="entry.1196939461" placeholder="--Enter Your Business Name--" required style="width: 200px; text-align: center;">
+    <h3>E-mail:</h3>
+    <input type="email" name="entry.331188034" placeholder="--Enter Your E-mail--" required style="width: 200px; text-align: center;">
+    <h3>Contact Number:</h3>
+    <input type="tel" name="entry.575007901" placeholder="--Enter Your Contact Number--" required style="width: 200px; text-align: center;">
+    <h3>Your Need</h3>
+    <input type="text" name="entry.915980167" placeholder="--Like website and poster--" required style="width: 200px; text-align: center;">
+    <h3>Website Type:</h3>
+    <input type="text" name="entry.1624235465" placeholder="--E-commerce/Portfolio/Blog etc--" required style="width: 200px; text-align: center;">
+    <br>
+    <button type="submit" class="butto1" onclick="show()">
+        Submit
+    </button>
+    <script>
+            function show() {
+                alert("Thank You For Submitting Your Requirements. We Will Contact You Soon 😊");
+            }
+          </script>
+          <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+        </form>
+    </div>
+    <div class="vid">
+        <h3>What We Do</h3>
+        <video controls loop>
+            <source src="intro.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+</body>
+</html>
