@@ -100,29 +100,47 @@
 </h1>
 <div class="wrapper">
     <div class="info">
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdwiIvohbFmkEMQcBJl720sThPMCHiEtNlGwobSMo8Um0AvaQ/formResponse" 
-      method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdwiIvohbFmkEMQcBJl720sThPMCHiEtNlGwobSMo8Um0AvaQ/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="handleSubmit();">
+
     <h3>Name:</h3>
-    <input type="text" name="entry.1196939461" placeholder="--Enter Your Name--" required style="width: 200px; text-align: center;">
+    <input type="text" name="entry.1196939461" placeholder="--Enter Your Name--" required>
+
     <h3>E-mail:</h3>
-    <input type="email" name="entry.331188034" placeholder="--Enter Your E-mail--" required style="width: 200px; text-align: center;">
+    <input type="email" name="entry.331188034" placeholder="--Enter Your E-mail--" required>
+
     <h3>Contact Number:</h3>
-    <input type="tel" name="entry.575007901" placeholder="--Enter Your Contact Number--" required style="width: 200px; text-align: center;">
+    <input type="tel" name="entry.575007901" placeholder="--Enter Your Contact Number--" required>
+
     <h3>Your Need</h3>
-    <input type="text" name="entry.915980167" placeholder="--What You need in your website--" required style="width: 200px; text-align: center;">
+    <input type="text" name="entry.915980167" placeholder="--What You need in your website--" required>
+
     <h3>Website Type:</h3>
-    <input type="text" name="entry.1624235465" placeholder="--E-commerce/Portfolio/Blog etc--" required style="width: 200px; text-align: center;">
-    <br>
- <button type="submit" class="butto1" onclick="show()">
+    <input type="text" name="entry.1624235465" placeholder="--E-commerce / Portfolio / Blog etc--" required>
+
+    <br><br>
+
+    <button type="submit" class="butto1">
         Submit
     </button>
-    <script>
-            function show() {
-                alert("Thank You For Submitting Your Requirements. Our Team Will Contact You Soon 😊 , <br> Thankyou🙏🏼");
-            }
-          </script>
-          <iframe name="hidden_iframe" style="display:none;"></iframe>
-        </form>
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+
+<script>
+    function handleSubmit() {
+        alert("Thank You For Submitting Your Requirements 😊\nOur Team Will Contact You Soon 🙏🏼");
+
+        // redirect AFTER alert OK
+        setTimeout(function () {
+            window.location.href = "thankyou.html";
+        }, 500);
+    }
+</script>
+
     </div>
     <div class="vid">
         <h3>What We Do</h3>
