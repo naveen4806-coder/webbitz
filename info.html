@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Tell Your Requirements</title>
+    <meta charset="UTF-8">
+    <title>Tell Your Requirements | Webbitz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             background: linear-gradient(135deg, #f5c16c, #042653);
@@ -15,6 +17,7 @@
             font-size: 25px;
             text-align: center;
             padding: 20px;
+            color: #000;
         }
 
         /* MAIN LAYOUT */
@@ -27,7 +30,7 @@
             flex-wrap: wrap;
         }
 
-        /*FORM BOX */
+        /* FORM BOX */
         .info {
             background-color: rgb(200, 197, 197);
             width: 100%;
@@ -42,12 +45,14 @@
         }
 
         .info input {
-            width: 80%;
-            padding: 2px;
+            width: 90%;
+            padding: 8px;
             margin-bottom: 15px;
             border-radius: 5px;
             border: none;
+            font-size: 14px;
         }
+
         /* BUTTON */
         .butto1 {
             background-color: rgb(255, 8, 8);
@@ -58,11 +63,12 @@
             box-shadow: 2px 2px 10px black;
             cursor: pointer;
             border: none;
-            width: 50%;
-            margin-left: 80px;
+            width: 60%;
+            display: block;
+            margin: auto;
         }
 
-        /*VIDEO BOX */
+        /* VIDEO BOX */
         .vid {
             background-color: black;
             padding: 20px;
@@ -93,68 +99,67 @@
         }
     </style>
 </head>
+
 <body>
+
 <h1>
     Hey Man 🙎‍♂️ Come <br>
-    Lets Start Creating Your Website 👨‍💻
+    Let’s Start Creating Your Website 👨‍💻
 </h1>
+
 <div class="wrapper">
+
+    <!-- FORM SECTION -->
     <div class="info">
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdwiIvohbFmkEMQcBJl720sThPMCHiEtNlGwobSMo8Um0AvaQ/formResponse"
-      method="POST"
-      target="hidden_iframe"
-      onsubmit="handleSubmit();">
+        <form action="https://formsubmit.co/webbitzwebmaker@gmail.com"
+              method="POST"
+              onsubmit="handleSubmit()">
 
-    <h3>Name:</h3>
-    <input type="text" name="entry.1196939461" placeholder="--Enter Your Name--" required>
+            <!-- FormSubmit Settings -->
+            <input type="hidden" name="_subject" value="New Website Requirement - Webbitz">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="thankyou.html">
 
-    <h3>E-mail:</h3>
-    <input type="email" name="entry.331188034" placeholder="--Enter Your E-mail--" required>
+            <h3>Name:</h3>
+            <input type="text" name="Name" placeholder="--Enter Your Name--" required>
 
-    <h3>Contact Number:</h3>
-    <input type="tel" name="entry.575007901" placeholder="--Enter Your Contact Number--" required>
+            <h3>E-mail:</h3>
+            <input type="email" name="Email" placeholder="--Enter Your E-mail--" required>
 
-    <h3>Your Need</h3>
-    <input type="text" name="entry.915980167" placeholder="--What You need in your website--" required>
+            <h3>Contact Number:</h3>
+            <input type="tel" name="Contact Number" placeholder="--Enter Your Contact Number--" required>
 
-    <h3>Website Type:</h3>
-    <input type="text" name="entry.1624235465" placeholder="--E-commerce / Portfolio / Blog etc--" required>
+            <h3>Your Need:</h3>
+            <input type="text" name="Requirement" placeholder="--What you need in your website--" required>
 
-    <br><br>
+            <h3>Website Type:</h3>
+            <input type="text" name="Website Type" placeholder="--E-commerce / Portfolio / Blog etc--" required>
 
-    <button type="submit" class="butto1">
-        Submit
-    </button>
-</form>
+            <br>
 
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
-
-<script>
-    function handleSubmit() {
-        alert("Thank You For Submitting Your Requirements 😊\nOur Team Will Contact You Soon 🙏🏼");
-
-        // redirect AFTER alert OK
-        setTimeout(function () {
-            window.location.href = "thankyou.html";
-        }, 500);
-    }
-</script>
-
+            <button type="submit" class="butto1">
+                Submit
+            </button>
+        </form>
     </div>
+
+    <!-- VIDEO SECTION -->
     <div class="vid">
         <h3>What We Do</h3>
         <video controls loop>
             <source src="intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
     </div>
+
 </div>
+
+<script>
+    function handleSubmit() {
+        alert("Thank You For Submitting Your Requirements 😊\nOur Team Will Contact You Soon 🙏🏼");
+    }
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
