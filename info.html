@@ -20,7 +20,6 @@
             color: #000;
         }
 
-        /* MAIN LAYOUT */
         .wrapper {
             display: flex;
             gap: 30px;
@@ -30,7 +29,6 @@
             flex-wrap: wrap;
         }
 
-        /* FORM BOX */
         .info {
             background-color: rgb(200, 197, 197);
             width: 100%;
@@ -53,7 +51,6 @@
             font-size: 14px;
         }
 
-        /* BUTTON */
         .butto1 {
             background-color: rgb(255, 8, 8);
             color: white;
@@ -68,7 +65,6 @@
             margin: auto;
         }
 
-        /* VIDEO BOX */
         .vid {
             background-color: black;
             padding: 20px;
@@ -91,7 +87,6 @@
             border-radius: 10px;
         }
 
-        /* MOBILE FIX */
         @media (max-width: 600px) {
             h1 {
                 font-size: 20px;
@@ -109,47 +104,41 @@
 
 <div class="wrapper">
 
-    <!-- FORM SECTION -->
     <div class="info">
-        <form action="https://formsubmit.co/rsnaveensiva@gmail.com"
-              method="POST"
-              onsubmit="handleSubmit()">
+        <form 
+            action="https://formsubmit.co/rsnaveensiva@gmail.com"
+            method="POST"
+            onsubmit="return handleSubmit()">
 
-            <!-- FormSubmit Settings -->
+            <!-- FormSubmit settings -->
             <input type="hidden" name="_subject" value="New Website Requirement - Webbitz">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="thankyou.html">
 
             <h3>Name:</h3>
-            <input type="text" name="Name" placeholder="--Enter Your Name--" required>
+            <input type="text" name="Name" required>
 
             <h3>E-mail:</h3>
-            <input type="email" name="Email" placeholder="--Enter Your E-mail--" required>
+            <input type="email" name="Email" required>
 
             <h3>Contact Number:</h3>
-            <input type="tel" name="Contact Number" placeholder="--Enter Your Contact Number--" required>
+            <input type="tel" name="ContactNumber" required>
 
             <h3>Your Need:</h3>
-            <input type="text" name="Requirement" placeholder="--What you need in your website--" required>
+            <input type="text" name="Requirement" required>
 
             <h3>Website Type:</h3>
-            <input type="text" name="Website Type" placeholder="--E-commerce / Portfolio / Blog etc--" required>
+            <input type="text" name="WebsiteType" required>
 
-            <br>
-
-            <button type="submit" class="butto1">
-                Submit
-            </button>
+            <button type="submit" class="butto1">Submit</button>
         </form>
     </div>
 
-    <!-- VIDEO SECTION -->
     <div class="vid">
         <h3>What We Do</h3>
         <video controls loop>
             <source src="intro.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
     </div>
 
@@ -157,10 +146,12 @@
 
 <script>
     function handleSubmit() {
-        alert("Thank You For Submitting Your Requirements 😊\nOur Team Will Contact You Soon 🙏🏼");
+        alert(
+            "Thank You For Submitting Your Requirements 😊\n\nOur Team Will Contact You Soon 🙏🏼"
+        );
+        return true; // allow form to submit
     }
 </script>
 
 </body>
 </html>
-
