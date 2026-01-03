@@ -94,36 +94,34 @@
 <div class="wrapper">
 
     <div class="info">
-        <form 
-            action="https://formsubmit.co/rsnaveensiva@gmail.com"
-            method="POST"
-            onsubmit="return handleSubmit();">
+       <form 
+    action="https://formsubmit.co/rsnaveensiva@gmail.com" 
+    method="POST" 
+    onsubmit="return handleSubmit();">
 
-            <!-- FormSubmit Settings -->
-            <input type="hidden" name="_subject" value="New Website Requirement - Webbitz">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
+    <!-- FormSubmit settings -->
+    <input type="hidden" name="_subject" value="New Website Requirement - Webbitz">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="thankyou.html">
 
-            <!-- IMPORTANT: use FULL URL -->
-            <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+    <h3>Name:</h3>
+    <input type="text" name="Name" required>
 
-            <h3>Name:</h3>
-            <input type="text" name="Name" required>
+    <h3>E-mail:</h3>
+    <input type="email" name="Email" required>
 
-            <h3>E-mail:</h3>
-            <input type="email" name="Email" required>
+    <h3>Contact Number:</h3>
+    <input type="tel" name="ContactNumber" required>
 
-            <h3>Contact Number:</h3>
-            <input type="tel" name="ContactNumber" required>
+    <h3>Your Need:</h3>
+    <input type="text" name="Requirement" required>
 
-            <h3>Your Need:</h3>
-            <input type="text" name="Requirement" required>
+    <h3>Website Type:</h3>
+    <input type="text" name="WebsiteType" required>
 
-            <h3>Website Type:</h3>
-            <input type="text" name="WebsiteType" required>
-
-            <button type="submit" class="butto1">Submit</button>
-        </form>
+    <button type="submit" class="butto1">Submit</button>
+</form>
     </div>
 
     <div class="vid">
@@ -147,3 +145,4 @@
 
 </body>
 </html>
+
