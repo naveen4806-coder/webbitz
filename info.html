@@ -38,6 +38,12 @@
             box-shadow: 5px 5px 15px rgb(0, 0, 0);
         }
 
+        .info label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
         .info input {
             width: 90%;
             padding: 8px;
@@ -93,24 +99,30 @@
 
 <div class="wrapper">
     <div class="info">
-       <form action="https://formsubmit.co/naveentanvi4806@gmail.com" method="POST"
-    onsubmit="return handleSubmit();">
-    <input type="hidden" name="_subject" value="New Website Requirement - Webbitz">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="thankyou.html">
-    <h3>Name:</h3>
-    <input type="text" name="Name" required>
-    <h3>E-mail:</h3>
-    <input type="email" name="Email" required>
-    <h3>Contact Number:</h3>
-    <input type="tel" name="ContactNumber" required>
-    <h3>Your Need:</h3>
-    <input type="text" name="Requirement" required>
-    <h3>Website Type:</h3>
-    <input type="text" name="WebsiteType" required>
-    <button type="submit" class="butto1">Submit</button>
-</form>
+        <form action="https://formsubmit.co/webbitzwebmaker@gmail.com" method="POST"
+              onsubmit="return handleSubmit();">
+            <input type="hidden" name="_subject" value="New Website Requirement - Webbitz">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="thankyou.html">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="Name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="Email" required>
+
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" name="ContactNumber" required>
+
+            <label for="requirement">Your Need:</label>
+            <input type="text" id="requirement" name="Requirement" required>
+
+            <label for="websiteType">Website Type:</label>
+            <input type="text" id="websiteType" name="WebsiteType" required>
+
+            <button type="submit" class="butto1">Submit</button>
+        </form>
     </div>
 
     <div class="vid">
@@ -119,7 +131,6 @@
             <source src="intro.mp4" type="video/mp4">
         </video>
     </div>
-
 </div>
 
 <script>
@@ -129,11 +140,8 @@
             "Our Team Will Contact You Soon 🙏🏼"
         );
         return true;
+    }
 </script>
 
 </body>
 </html>
-
-
-
-
