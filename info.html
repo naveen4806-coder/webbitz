@@ -38,7 +38,8 @@
             box-shadow: 5px 5px 15px rgb(0, 0, 0);
         }
 
-        .info input {
+        .info input,
+        .info textarea {
             width: 90%;
             padding: 8px;
             margin-bottom: 15px;
@@ -86,62 +87,66 @@
 
 <body>
 
-    <h1>
-        Hey Man 🙎‍♂️ Come <br>
-        Let’s Start Creating Your Website 👨‍💻
-    </h1>
+<h1>
+    Hey Man 🙎‍♂️ Come <br>
+    Let’s Start Creating Your Website 👨‍💻
+</h1>
 
-    <div class="wrapper">
+<div class="wrapper">
 
-        <div class="info">
-            <form action="https://formsubmit.co/webbitzwebmaker@gmail.com" method="POST" onsubmit="return handleSubmit();">
+    <div class="info">
+        <form 
+            action="https://formsubmit.co/el/zipuri"
+            method="POST"
+            onsubmit="return handleSubmit();"
+        >
 
+            <!-- FormSubmit settings -->
+            <input type="hidden" name="_subject" value="New Website Requirement - Webbitz">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="thankyou.html">
 
-                <input type="hidden" name="_subject" value="New Website Requirement - Webbitz">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="thankyou.html">
+            <!-- Honeypot spam protection -->
+            <input type="text" name="_honey" style="display:none">
 
-                <h3>Name:</h3>
-                <input type="text" name="Name" required>
+            <h3>Name:</h3>
+            <input type="text" name="Name" required>
 
-                <h3>E-mail:</h3>
-                <input type="email" name="Email" required>
+            <h3>E-mail:</h3>
+            <input type="email" name="Email" required>
 
-                <h3>Contact Number:</h3>
-                <input type="tel" name="ContactNumber" required>
+            <h3>Contact Number:</h3>
+            <input type="tel" name="ContactNumber" pattern="[0-9]{10}" required>
 
-                <h3>Your Need:</h3>
-                <input type="text" name="Requirement" required>
+            <h3>Your Need:</h3>
+            <textarea name="Requirement" rows="4" required></textarea>
 
-                <h3>Website Type:</h3>
-                <input type="text" name="WebsiteType" required>
+            <h3>Website Type:</h3>
+            <input type="text" name="WebsiteType" required>
 
-                <button type="submit" class="butto1">Submit</button>
-            </form>
-        </div>
-
-        <div class="vid">
-            <h3>What We Do</h3>
-            <video controls loop>
-                <source src="intro.mp4" type="video/mp4">
-            </video>
-        </div>
-
+            <button type="submit" class="butto1">Submit</button>
+        </form>
     </div>
 
-    <script>
-        function handleSubmit() {
-            alert(
-                "Thank You For Submitting Your Requirements 😊\n\n" +
-                "Our Team Will Contact You Soon 🙏🏼"
-            );
-            return true;
-        }
-    </script>
+    <div class="vid">
+        <h3>What We Do</h3>
+        <video controls loop>
+            <source src="intro.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</div>
+
+<script>
+    function handleSubmit() {
+        alert(
+            "Thank You For Submitting Your Requirements 😊\n\n" +
+            "Our Team Will Contact You Soon 🙏🏼"
+        );
+        return true;
+    }
+</script>
 
 </body>
 </html>
-
-
-
