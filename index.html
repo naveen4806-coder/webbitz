@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Webbitz.com</title>
-
-    <!-- IMPORTANT for mobile -->
+    <title>NN Nexus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            background: linear-gradient(135deg, #f5c16c, #042653);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+        :root {
+            --dark: #080c14;
+            --accent: #00f0ff;
+            --accent2: #7b2fff;
+            --mid: #141c2e;
+            --light: #e2eaf7;
+            --card: #101828;
         }
 
-        h1, h2, h4, p {
-            color: #000;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--dark);
+            font-family: 'Syne', sans-serif;
+            color: var(--light);
+            overflow-x: hidden;
         }
-    /* NAVIGATION BAR STYLES */
+
+        /* Grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0,240,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,240,255,0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* NAV */
         nav {
-            background-color: #000;
-            padding: 10px;
+            background-color: rgba(8,12,20,0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,240,255,0.15);
+            padding: 14px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .navigation {
@@ -31,107 +56,241 @@
         }
 
         .but2 {
-            background-color: black;
-            border-radius: 20px;
-            padding: 10px 15px;
-            font-size: medium;
-            font-style: italic;
-            border: none;
+            background: transparent;
+            border: 1px solid rgba(0,240,255,0.25);
+            border-radius: 6px;
+            padding: 10px 18px;
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .but2:hover {
+            background: rgba(0,240,255,0.08);
+            border-color: var(--accent);
+            box-shadow: 0 0 12px rgba(0,240,255,0.2);
         }
 
         .one {
-            color: rgb(227, 220, 220);
+            color: var(--light);
             text-decoration: none;
-            font-weight: bold;
+            letter-spacing: 0.05em;
         }
 
-        .one:hover {
-            color: rgba(230, 6, 88, 0.893);
-        }
+        .one:hover { color: var(--accent); }
 
-        /* - MAIN SECTION - */
-        .center {
+        /* LOGO AREA */
+        .logo-bar {
             text-align: center;
-            padding: 20px;
+            padding: 60px 20px 20px;
+            position: relative;
+            z-index: 1;
         }
+
+        .logo-bar h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .logo-bar .tagline {
+            color: rgba(226,234,247,0.6);
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            letter-spacing: 0.2em;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        /* MAIN HERO CARD */
+        .center { text-align: center; padding: 20px; position: relative; z-index: 1; }
 
         .main {
-            background-color: rgb(146, 138, 138);
-            padding: 20px;
-            border-radius: 8px;
+            background: var(--card);
+            border: 1px solid rgba(0,240,255,0.2);
+            padding: 36px 30px;
+            border-radius: 16px;
             max-width: 600px;
             width: 100%;
             margin: 20px auto;
-            box-shadow: 10px 10px 20px rgb(0, 0, 0);
+            box-shadow: 0 0 40px rgba(0,240,255,0.07), 0 20px 60px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent);
+        }
+
+        .main p {
+            font-size: 18px;
+            color: rgba(226,234,247,0.85);
+            margin-bottom: 28px;
+            line-height: 1.6;
         }
 
         .but {
+            font-family: 'Space Mono', monospace;
             font-size: 13px;
-            animation: pulse 1.5s infinite;
-            padding: 13px;
-            border-radius: 200px;
-            color: rgb(0, 0, 71);
+            padding: 14px 30px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: var(--dark);
             border: none;
+            font-weight: 700;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
+
+        .but a { color: var(--dark); text-decoration: none; }
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+            0% { box-shadow: 0 0 0 0 rgba(0,240,255,0.4); }
+            70% { box-shadow: 0 0 0 14px rgba(0,240,255,0); }
+            100% { box-shadow: 0 0 0 0 rgba(0,240,255,0); }
         }
 
-        /* GRID SECTION  */
+        .about-text {
+            color: rgba(226,234,247,0.65);
+            max-width: 500px;
+            margin: 16px auto 0;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* GRID */
         .container1 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             padding: 20px;
-            margin: 40px auto;
+            margin: 50px auto;
             width: 90%;
-            background-color: #c4c0c0;
-            border-radius: 20px;
+            max-width: 1100px;
+            position: relative;
+            z-index: 1;
         }
 
         .container2 {
-            background-color: #eeedeb;
-            padding: 20px;
-            border-radius: 20px;
+            background: var(--card);
+            border: 1px solid rgba(123,47,255,0.2);
+            padding: 28px;
+            border-radius: 14px;
             text-align: center;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
         }
 
-        /*  FAQ  */
+        .container2:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent2);
+            box-shadow: 0 10px 40px rgba(123,47,255,0.15);
+        }
+
+        .container2 h2 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .container2 h4 {
+            color: rgba(226,234,247,0.7);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .container2 ul {
+            list-style: none;
+            text-align: left;
+            color: rgba(226,234,247,0.75);
+            line-height: 2;
+        }
+
+        .container2 ul li::before {
+            content: '→ ';
+            color: var(--accent);
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* SECTION HEADING */
+        .section-title {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 800;
+            color: var(--light);
+            margin-bottom: 6px;
+        }
+
+        /* FAQ */
         .q {
             width: 90%;
             max-width: 800px;
-            margin: 40px auto;
+            margin: 20px auto 60px;
             padding: 20px;
+            position: relative;
+            z-index: 1;
         }
 
+        .q .section-title { margin-bottom: 24px; }
+
         details {
-            border-bottom: 1px solid #333;
-            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,240,255,0.12);
+            padding: 18px 0;
         }
 
         summary {
-            font-size: 18px;
+            font-size: 17px;
             cursor: pointer;
             list-style: none;
+            color: var(--light);
+            font-weight: 600;
         }
 
         summary::after {
-            content: "🔽";
+            content: "▾";
             float: right;
+            color: var(--accent);
+            font-size: 20px;
+            transition: transform 0.2s;
         }
 
-        /*  MOBILE FIX */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 24px;
-            }
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
 
-            p {
-                font-size: 16px;
-            }
+        details p {
+            margin-top: 10px;
+            color: rgba(226,234,247,0.65);
+            font-size: 15px;
+            line-height: 1.7;
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid rgba(0,240,255,0.1);
+            text-align: center;
+            padding: 24px;
+            color: rgba(226,234,247,0.3);
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 600px) {
+            .logo-bar h1 { font-size: 2.4rem; }
+            .main p { font-size: 16px; }
         }
     </style>
 </head>
@@ -147,17 +306,20 @@
     </div>
 </nav>
 
-<div class="center">
-    <h1>Welcome to Webbitz</h1>
+<div class="logo-bar">
+    <h1>NN Nexus</h1>
+    <p class="tagline">// Connect · Create · Scale</p>
+</div>
 
+<div class="center">
     <div class="main">
         <p>We Build Professional Websites For You As Per Your Requirements</p>
-        <a href="info.html"><button class="but">Lets Discuss ☄️</button></a>
+        <button class="but"><a href="info.html">Let's Discuss ☄️</a></button>
     </div>
 
-    <h2>About Webbitz</h2>
-    <p>
-        Webbitz is a web development company that specializes in creating professional
+    <h2 class="section-title" style="margin-top:40px;">About NN Nexus</h2>
+    <p class="about-text">
+        NN Nexus is a web development company that specializes in creating professional
         websites for small businesses and startups.
     </p>
 </div>
@@ -179,29 +341,28 @@
     </div>
 
     <div class="container2">
-        <h2>Who We’re For</h2>
+        <h2>Who We're For</h2>
         <h4>Small businesses, startups, and individuals.</h4>
     </div>
 </div>
 
 <div class="q">
-    <h2>Frequently Asked Questions</h2>
+    <h2 class="section-title">Frequently Asked Questions</h2>
 
     <details>
-        <summary>Why should I choose Webbitz?</summary>
-        <p>Fast, affordable, and professional websites.</p>
+        <summary>Why should I choose NN Nexus?</summary>
+        <p>Fast, affordable, and professional websites — built with precision and care.</p>
     </details>
 
     <details>
         <summary>How long does it take?</summary>
-        <p>Usually 1–2 weeks.</p>
+        <p>Usually 1–2 weeks from requirements to launch.</p>
     </details>
 </div>
 
+<footer>
+    © 2025 NN Nexus — All rights reserved.
+</footer>
+
 </body>
 </html>
-
-
-
-
-
