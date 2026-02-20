@@ -2,22 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tell Your Requirements | Webbitz</title>
+    <title>Tell Your Requirements | NN Nexus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --dark: #080c14;
+            --accent: #00f0ff;
+            --accent2: #7b2fff;
+            --card: #101828;
+            --light: #e2eaf7;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            background: linear-gradient(135deg, #f5c16c, #042653);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            background-color: var(--dark);
+            font-family: 'Syne', sans-serif;
+            color: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0,240,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,240,255,0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
         }
 
         h1 {
-            font-size: 25px;
+            font-size: clamp(20px, 4vw, 28px);
             text-align: center;
-            padding: 20px;
-            color: #000;
+            padding: 40px 20px 20px;
+            color: var(--light);
+            font-weight: 800;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 span {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .wrapper {
@@ -27,113 +61,160 @@
             align-items: flex-start;
             padding: 20px;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
 
+        /* FORM CARD */
         .info {
-            background-color: rgb(200, 197, 197);
+            background: var(--card);
+            border: 1px solid rgba(0,240,255,0.2);
             width: 100%;
             max-width: 400px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 5px 5px 15px rgb(0, 0, 0);
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: 0 0 40px rgba(0,240,255,0.07), 0 20px 60px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
         }
+
+        .info::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent);
+        }
+
+        .info h3 {
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-family: 'Space Mono', monospace;
+            margin-bottom: 6px;
+            margin-top: 14px;
+        }
+
+        .info h3:first-of-type { margin-top: 0; }
 
         .info input,
         .info textarea {
-            width: 90%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: none;
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 4px;
+            border-radius: 8px;
+            border: 1px solid rgba(0,240,255,0.15);
+            background: rgba(255,255,255,0.04);
+            color: var(--light);
             font-size: 14px;
+            font-family: 'Space Mono', monospace;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
+        .info input:focus,
+        .info textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(0,240,255,0.15);
+        }
+
+        .info textarea { resize: vertical; }
+
         .butto1 {
-            background-color: rgb(255, 8, 8);
-            color: white;
-            padding: 10px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: var(--dark);
+            padding: 12px;
             border-radius: 10px;
             font-size: 15px;
-            box-shadow: 2px 2px 10px black;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            box-shadow: 0 0 20px rgba(0,240,255,0.3);
             cursor: pointer;
             border: none;
             width: 60%;
             display: block;
-            margin: auto;
+            margin: 20px auto 0;
+            letter-spacing: 0.05em;
+            transition: opacity 0.2s, transform 0.2s;
         }
 
+        .butto1:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* VIDEO CARD */
         .vid {
-            background-color: black;
-            padding: 20px;
-            border-radius: 15px;
+            background: var(--card);
+            border: 1px solid rgba(123,47,255,0.25);
+            padding: 0;
+            border-radius: 16px;
             max-width: 520px;
             width: 100%;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(123,47,255,0.08), 0 20px 60px rgba(0,0,0,0.5);
         }
 
         .vid h3 {
             text-align: center;
-            background-color: rgb(2, 126, 160);
-            color: white;
-            padding: 10px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: var(--dark);
+            padding: 14px 10px;
             margin-top: 0;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .vid video-wrap {
+            padding: 16px;
+            display: block;
         }
 
         video {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 0 0 14px 14px;
+            display: block;
         }
     </style>
 </head>
-
 <body>
 
 <h1>
     Hey Man 🙎‍♂️ Come <br>
-    Let’s Start Creating Your Website 👨‍💻
+    <span>Let's Start Creating Your Website 👨‍💻</span>
 </h1>
 
 <div class="wrapper">
-
     <div class="info">
-           <form action="https://formsubmit.co/webbitzwebmaker@gmail.com"
-             method="POST"
-            onsubmit="return handleSubmit();"
-        >
-
+        <form action="https://formsubmit.co/webbitzwebmaker@gmail.com"
+              method="POST"
+              onsubmit="return handleSubmit();">
             <!-- FormSubmit settings -->
             <input type="hidden" name="_subject" value="New Website Requirement - Webbitz">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="thankyou.html">
-
             <!-- Honeypot spam protection -->
             <input type="text" name="_honey" style="display:none">
 
             <h3>Name:</h3>
             <input type="text" name="Name" required>
-
             <h3>E-mail:</h3>
             <input type="email" name="Email" required>
-
             <h3>Contact Number:</h3>
             <input type="tel" name="ContactNumber" pattern="[0-9]{10}" required>
-
             <h3>Your Need:</h3>
             <textarea name="Requirement" rows="4" required></textarea>
-
             <h3>Website Type:</h3>
             <input type="text" name="WebsiteType" required>
-
             <button type="submit" class="butto1">Submit</button>
         </form>
     </div>
 
-    <div class="vid">
-        <h3>What We Do</h3>
-        <video controls loop>
-            <source src="intro.mp4" type="video/mp4">
-        </video>
-    </div>
 
 </div>
 
@@ -149,9 +230,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
